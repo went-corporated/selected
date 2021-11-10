@@ -1,13 +1,16 @@
 {
     "manifest_version": 3,
     "name": "Selected",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Sélectionnez du texte avec style !",
     "author": "kct_wl",
     "homepage_url": "https://github.com/went-lab/selected",
     "minimum_chrome_version": "92.0",
     "permissions": [
         "activeTab",
+        "background",
+        "contextMenus",
+        "notifications",
         "tabs"
     ],
     "icons": {
@@ -20,5 +23,9 @@
             "matches": ["<all_urls>"],
             "css": ["selection.css"]
         }
-    ]
+    ],
+    "action": {
+        "default_popup": "./popup/popup.html",
+        "default_title": "Selected"
+    }
 }
