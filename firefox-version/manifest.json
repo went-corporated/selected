@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "Selected",
+    "version": "1.1",
+    "description": "Sélectionnez du texte avec style !",
+    "author": "kct_wl",
+    "homepage_url": "https://github.com/went-corporated/selected",
+    "permissions": [
+        "activeTab",
+        "background",
+        "contextMenus",
+        "notifications",
+        "tabs"
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "icons": {
+        "16": "./icons/cursor-16.png",
+        "48": "./icons/cursor-48.png",
+        "128": "./icons/cursor-128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "css": ["selection.css"]
+        }
+    ],
+    "browser_action": {
+        "default_popup": "./popup/popup.html",
+        "default_title": "Selected"
+    }
+}

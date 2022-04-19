@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+@keyframes flash {
+    0% {
+        background: #1159a6;
+        color: #fff;
+        opacity: 1
+    }
+
+    50% {
+        opacity: .5;
+        background: inherit;
+        color: inherit
+    }
+
+    to {
+        background: #1159a6;
+        color: #fff;
+        opacity: 1
+    }
+}
+
+*{
+    user-select: none;
+    font-size: 100%;
+    box-sizing: border-box;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+    margin: 0; padding: 0;
+    border: none;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    vertical-align: baseline;
+}
+
+body{
+    background-color: rgb(34, 34, 34);
+    min-height: 100vh;
+    margin: 0; padding: 0;
+    border: none;
+    scroll-behavior: smooth;
+    display: flex;
+    align-items: center; justify-content: center;
+}
+
+.ui-controller{
+    position: relative;
+    height: 540px;
+    width: 360px;
+    background-color: rgb(34, 34, 34);
+    /* margin: 0; padding: 0; */
+    overflow: hidden;
+    border: 1px solid rgb(50, 50, 50);
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar{
+    height: 46px;
+    width: 100%;
+    background-color: rgb(34, 34, 34);
+    margin: 0; padding: 0;
+    overflow: hidden;
+    border-bottom: 1px solid rgb(50, 50, 50);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    padding: 10px 16px;
+    flex-shrink: 0;
+}
+
+.navbar>.toggle-burger-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* padding: 5px; */
+    /* margin: -5px; */
+}
+.navbar>.toggle-burger-menu:hover>svg{
+    fill: white;
+}
+
+.navbar>.toggle-burger-menu>svg{
+    fill: rgb(119, 119, 119);
+    transition: fill 200ms ease 0s;
+}
+
+.navbar>.title{
+    color: rgba(255, 255, 255, .5);
+    font-size: 16px;
+    min-width: 0;
+}
+
+.navbar>.connexion-voyant{
+    width: 12px; height: 12px;
+    background-color: rgb(235, 55, 66);
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.ui-standard{
+    opacity: 1;
+    overflow: auto;
+    padding: 15px;
+    flex: 1 1 0%;
+    transform: none;
+}
+
+.ui-standard>.container{
+    opacity: 1;
+    transform: none;
+    position: relative;
+    height: 100%;
+}
+
+.ui-standard>.container>.breadcrumb{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    margin-top: -16px;
+    background: linear-gradient(
+        rgba(136, 136, 136, .05) 0%,
+        rgba(136, 136, 136, .0) 100%);
+}
+
+.ui-standard>.container>.breadcrumb>.title{
+    margin-top: 33px;
+    margin-bottom: 18px;
+    color: white;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    opacity: 1;
+    font-size: 38px;
+    line-height: 25px;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.ui-standard>.container>.breadcrumb>.subtitle{
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+    min-height: 25px;
+}
+
+.ui-standard>.container>.breadcrumb>.subtitle>.subtitle{
+    margin-right: 6px;
+    color: rgb(119, 119, 119);
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    opacity: 1;
+    font-size: 18px;
+    line-height: 25px;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.ui-standard>.container>.breadcrumb>.subtitle>.encadre{
+    border-radius: 6px;
+    padding: 2px 5px;
+    color: rgb(119, 119, 119);
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    opacity: 1;
+    font-size: 18px;
+    line-height: 25px;
+    text-decoration: none;
+    background-color: rgba(119, 119, 119, .1);
+}
+
+.ui-standard>.container>.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ui-standard>.container>.container>.big-btn{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(42, 42, 42);
+    border-radius: 6px;
+    padding: 18px 20px;
+    width: 100%;
+    cursor: pointer;
+}
+.ui-standard>.container>.container>.big-btn:hover{
+    background: rgb(51, 51, 51);
+}
+
+.ui-standard>.container>.container>.big-btn>div>.title{
+    color: white;
+    text-align: left;
+    font-style: normal;
+    font-weight: 600;
+    opacity: 1;
+    font-size: 16px;
+    line-height: 25px;
+    text-decoration: none;
+    background-color: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.ui-standard>.container>.container>.big-btn>div>.subtitle{
+    color: rgb(119, 119, 119);
+    text-align: left;
+    font-style: normal;
+    font-weight: normal;
+    opacity: 1;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.ui-standard>.container>.container>.big-btn>svg{
+    width: 8;
+    fill: none;
+    overflow: hidden;
+}
+
+.part-menu{
+    position: relative;
+    height: 60px;
+    display: flex;
+}
+
+.tab-indicator{
+    position: absolute;
+    top: 0; left: 0;
+    height: 2px;
+    width: 43.6px;
+    background-color: rgb(138, 129, 248);
+    transform: translateX(30px) translateY(0px);
+}
+
+.tab-list{
+    flex: 1 1 0%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10px;
+    background-color: rgb(43, 43, 43);
+    border-top: 1px solid rgb(50, 50, 50);
+    box-shadow: rgb(0 0 0 / 25%) 0 -6px 10px;
+}
+
+.btn-tab{
+    padding: 15px 0;
+    margin: 0 12px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center; justify-content: center;
+    cursor: pointer;
+}
+.btn-tab::after{
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: transparent;
+}
+.btn-tab:hover>svg{
+    fill: white;
+}
+
+.btn-tab>svg{
+    fill: rgb(102, 102, 102);
+    transition: fill 200ms ease 0s;
+}
+
+.btn-tab-active{
+    cursor: default;
+}
+
+.btn-tab-active>svg{
+    fill: white;
+}
+
+.burger-menu{
+    transform: translateX(-270px);
+    width: 270px;
+    height: 100%;
+    margin: 0;
+    background-color: rgb(17, 17, 17);
+    top: 0;
+    position: absolute;
+    border-right: 1px solid rgb(50, 50, 50);
+    z-index: 11;
+    transition: .3s;
+}
+
+.burger-menu>.header{
+    height: 46px;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(50, 50, 50);
+}
+
+.burger-menu>.header>.title{
+    color: rgb(119, 119, 119);
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    opacity: 1;
+    font-size: 16px;
+    line-height: 25px;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.burger-menu>.header>.btn-close{
+    display: flex;
+    justify-content: center; align-items: center;
+    cursor: pointer;
+    padding: 5px;
+    margin: -5px;
+}
+.burger-menu>.header>.btn-close:hover>svg{
+    fill: white;
+}
+
+.burger-menu>.header>.btn-close>svg{
+    fill: rgb(119, 119, 119);
+    transition: fill 200ms ease 0s;
+}
+
+.burger-menu>.body{
+    height: 494px;
+    overflow: scroll;
+    padding: 6px 20px;
+}
+
+.burger-menu>.body>.menu-item{
+    cursor: pointer;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+.burger-menu>.body>.menu-item:hover>p{
+    color: rgb(138, 129, 248);
+}
+.burger-menu>.body>.menu-item:hover>svg{
+    fill: rgb(138, 129, 248);
+}
+
+.burger-menu>.body>.menu-item>*{
+    margin-right: 12px;
+}
+
+.burger-menu>.body>hr{
+    margin: 8px 0;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: .5px;
+    border-color: rgba(255, 255, 255, .15);
+}
+
+.burger-menu>.body>.menu-item>svg{
+    fill: rgb(119, 119, 119);
+}
+
+.burger-menu>.body>.menu-item>p{
+    color: white;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    opacity: 1;
+    font-size: 16px;
+    line-height: 25px;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.burger-menu-mask{
+    opacity: 1;
+    width: 100%; height: 100%;
+    margin: 0;
+    background-color: rgba(51, 51, 51, .5);
+    backdrop-filter: blur(4px);
+    top: 0;
+    position: absolute;
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: .3s;
+}
